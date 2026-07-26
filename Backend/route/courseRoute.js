@@ -91,11 +91,15 @@ router.put("/progress", requireAuth(), async (req, res) => {
     // Check if progress already exists
     const existingProgress = await UserCourseProgress.findOne({ userId, courseId });
 
+    if (!existingProgress) {
+      return res.status(404).json({ message: "Progress record not found" });
+    }
+
     // if (existingProgress) {
-      // If exists, update lastAccessed
-      existingProgress.lastAccessed = Date.now();
-      await existingProgress.save();
-      return res.status(200).json(existingProgress);
+    // If exists, update lastAccessed
+    existingProgress.lastAccessed = Date.now();
+    await existingProgress.save();
+    return res.status(200).json(existingProgress);
     // } else {
     //   // If not, create a new progress entry
     //   const newProgress = new UserCourseProgress({

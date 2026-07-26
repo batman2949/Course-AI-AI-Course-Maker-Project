@@ -584,7 +584,7 @@ export default function CoursePage({ params }) {
                             const token = await getToken();
                             const k = await paramsdata.courseId;
 
-                            const response = await fetch('http://localhost:5052/marked/save', {
+                            const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/marked/save`, {
                               method: 'POST',
                               headers: {
                                 'Content-Type': 'application/json',
@@ -618,7 +618,7 @@ export default function CoursePage({ params }) {
                             const token = await getToken();
                             const k = await paramsdata.courseId;
 
-                            const response = await fetch('http://localhost:5052/important/save', {
+                            const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/important/save`, {
                               method: 'POST',
                               headers: {
                                 'Content-Type': 'application/json',

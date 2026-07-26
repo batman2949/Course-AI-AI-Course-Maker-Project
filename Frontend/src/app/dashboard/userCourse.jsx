@@ -49,7 +49,7 @@ export function UserCourse() {
     setClickLoading(true); // show black screen loader
     try {
       const token = await getToken();
-      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/userHistory/progress`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/course/progress`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
