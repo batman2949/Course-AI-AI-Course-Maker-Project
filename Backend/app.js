@@ -11,7 +11,7 @@ const app = express();
 // ✅ Define allowed origins
 const allowedOrigins = [
   "http://localhost:3000",              // local dev
-  "https://course-maker-mu.vercel.app"  // deployed frontend
+  "https://course-ai-ai-course-maker-project.vercel.app"  // deployed frontend
 ];
 
 // ✅ CORS setup
